@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyRsaApp</string>
+    <string name="public_key">公钥\n%s</string>
+    <string name="private_key">私钥\n%s</string>
+    <string name="key">密钥</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

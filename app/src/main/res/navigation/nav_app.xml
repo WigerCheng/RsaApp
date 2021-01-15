@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myrsaapp.fragment.MainFragment"
+        android:label="RSA应用"
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/toFile"
+            app:destination="@id/fileFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fileFragment"
+        android:name="com.example.myrsaapp.fragment.FileFragment"
+        android:label="文件列表"
+        tools:layout="@layout/file_fragment">
+
+        <action
+            android:id="@+id/toDetail"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="fileName"
+                app:argType="string" />
+            <argument
+                android:name="file"
+                app:argType="java.io.File" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.myrsaapp.fragment.DetailFragment"
+        android:label="{fileName}"
+        tools:layout="@layout/detail_fragment">
+
+        <argument
+            android:name="fileName"
+            app:argType="string" />
+        <argument
+            android:name="file"
+            app:argType="java.io.File" />
+
+    </fragment>
+</navigation>
